@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<title>Question 3</title>
+<head>
+<script>
+
+function Validate_Parenthesis (str) {
+  let arr = [];
+  var answer=1;
+  var itr=0;
+  for(itr=0;itr<str.length;itr++)
+  {
+    cur_element=str[itr];
+    if(cur_element=='('||cur_element=='{'||cur_element=='[')
+    {
+      arr.push(cur_element);
+    }
+
+    else if(cur_element==')')
+    {
+      if(arr.length==0)
+      {
+        return 0;
+      }
+      else
+      {
+        if(arr[arr.length-1]=='(')
+        {
+          arr.pop();
+        }
+        else
+        {
+          return 0;
+        }
+      }
+    }
+    else if(cur_element==']')
+    {
+      if(arr.length==0)
+      {
+        return 0;
+      }
+      else
+      {
+        if(arr[arr.length-1]=='[')
+        {
+          arr.pop();
+        }
+        else
+        {
+          return 0;
+        }
+      }
+    }
+    else if(cur_element=='}')
+    {
+      if(arr.length==0)
+      {
+        return 0;
+      }
+      else
+      {
+        if(arr[arr.length-1]=='{')
+        {
+          arr.pop();
+        }
+        else
+        {
+          return 0;
+        }
+      }
+    }
+
+    if(arr.length==0&&itr==str.length-1)
+    {
+      return 1;
+    }
+    if(arr.length!=0&&itr==str.length-1)
+    {
+      return 0;
+    }
+
+  }
+
+}
+
+
+var str=window.prompt("Enter String: ");
+var answer=Validate_Parenthesis(str);
+if(answer==0)
+{
+  document.write("False");
+
+}
+else if(answer==1)
+{
+  document.write("True");
+
+}
+
+
+
+</script>
+</head>
+<body>
+</body>
+</html>

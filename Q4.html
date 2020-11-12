@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<title>Question 4</title>
+<head>
+<script>
+
+
+
+var sub_col =window.prompt("Enter Sub row length: ");
+var no_of_tree =window.prompt("Enter no of tree: ");
+
+
+if(sub_col<=0||no_of_tree<=0)
+{
+  document.write("Invalid Inputs")
+}
+else
+{
+  for(var no_of_tree_units=1;no_of_tree_units<=no_of_tree;no_of_tree_units++)
+  {
+    if(no_of_tree_units==1)
+    {
+        for(var i=1;i<=sub_col;i++)
+    {
+      for(var j=0;j<sub_col-i;j++)
+      {
+         document.write("_");
+      }
+      var k=1;
+      if(i==1)
+      {
+        k=2;
+         document.write("*");
+      }
+      for(;k<=i;k++)
+      {
+         document.write("0");
+      }
+
+      if(i!=1)
+      {
+        k=1;
+        for(k=1;k<i;k++)
+        {
+           document.write("0");
+        }
+      }
+       document.write("<br>");
+    }
+    }
+    else
+    {
+      for(var i=1;i<=sub_col;i++)
+    {
+      for(var j=0;j<sub_col-i;j++)
+      {
+         document.write("_");
+      }
+      var k=1;
+     
+      for(;k<=i;k++)
+      {
+         document.write("0");
+      }
+
+      if(i!=1)
+      {
+        k=1;
+        for(k=1;k<i;k++)
+        {
+           document.write("0");
+        }
+      }
+       document.write("<br>");
+    }
+    }
+  }
+//for trunk
+  
+    sub_col=sub_col-1;
+  
+
+  for(j=0;j<5;j++)
+        {
+            for(i=0;i<sub_col-1;i++)
+            {
+                document.write("_");
+                //document.write("0");
+            }
+            
+                document.write("000");
+          
+            document.write("<br>");
+        }
+}
+</script>
+</head>
+<body>
+</body>
+</html>
